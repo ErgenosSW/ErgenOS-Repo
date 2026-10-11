@@ -32,6 +32,17 @@ The `ergenos-keyring` package installs and trusts this key on ErgenOS. The
 fingerprint should be verified before trusting the key on another Arch-based
 system.
 
+## ErgenOS 1.2 package status
+
+- ErgenPac 1.0.1-1: optional Gaming catalog and automatic isolated catalog refresh.
+- ErgenCTL 1.1.0.dev-9: redesigned UI, hybrid graphics diagnostics and update verification.
+- ErgenOS Welcome 1.0.3-1: redesigned portal and language-aware project resources.
+- Optional ErgenOS Secure Boot 0.2.0.dev-6: existing signed-boot recovery backend.
+
+The validated 1.2 ISO uses ergenos-theme 1.2.0-2 from a separate local build
+repository. That theme is not yet published here. Do not infer availability of a
+public 1.2 ISO from application package publication. See [CHANGELOG.md](CHANGELOG.md).
+
 ## Current first-party packages
 
 - ErgenCTL
