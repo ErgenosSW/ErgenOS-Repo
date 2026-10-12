@@ -40,8 +40,8 @@ system.
 - Optional ErgenOS Secure Boot 0.2.0.dev-6: existing signed-boot recovery backend.
 
 The validated 1.2 ISO uses ergenos-theme 1.2.0-2 from a separate local build
-repository. That theme is not yet published here. Do not infer availability of a
-public 1.2 ISO from application package publication. See [CHANGELOG.md](CHANGELOG.md).
+repository. That theme is not yet published here. The public ErgenOS 1.2 ISO is
+available from the [ErgenOS 1.2 release](https://github.com/ErgenosSW/ErgenOS-Linux/releases/tag/v1.2.0), independently of package publication in this repository. See [CHANGELOG.md](CHANGELOG.md).
 
 ## Current first-party packages
 
