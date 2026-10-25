@@ -34,14 +34,15 @@ system.
 
 ## ErgenOS 1.2 package status
 
-- ErgenPac 1.0.1-1: optional Gaming catalog and automatic isolated catalog refresh.
-- ErgenCTL 1.1.0.dev-9: redesigned UI, hybrid graphics diagnostics and update verification.
+- ErgenPac 1.0.1-2: optional Gaming catalog and automatic isolated catalog refresh.
+- ErgenCTL 1.1.0.dev-12: redesigned UI, hybrid graphics diagnostics and update verification.
 - ErgenOS Welcome 1.0.3-1: redesigned portal and language-aware project resources.
 - Optional ErgenOS Secure Boot 0.2.0.dev-6: existing signed-boot recovery backend.
 
-The validated 1.2 ISO uses ergenos-theme 1.2.0-2 from a separate local build
-repository. That theme is not yet published here. The public ErgenOS 1.2 ISO is
-available from the [ErgenOS 1.2 release](https://github.com/ErgenosSW/ErgenOS-Linux/releases/tag/v1.2.0), independently of package publication in this repository. See [CHANGELOG.md](CHANGELOG.md).
+The repository now includes ergenos-theme 1.2.0-3. The October 25 refresh
+builds ErgenCTL and ErgenPac from pinned source snapshots of their current
+GitHub revisions. ErgenPac includes the responsive navigation changes made
+after v1.0.1. See CHANGELOG.md for build and validation scope.
 
 ## Current first-party packages
 
