@@ -32,19 +32,17 @@ The `ergenos-keyring` package installs and trusts this key on ErgenOS. The
 fingerprint should be verified before trusting the key on another Arch-based
 system.
 
-## ErgenOS 1.2 package status
+## ErgenOS 1.3 package status
 
-- ErgenPac 1.0.1-2: optional Gaming catalog and automatic isolated catalog refresh.
-- ErgenCTL 1.1.0.dev-12: redesigned UI, hybrid graphics diagnostics and update verification.
+- ErgenPac 1.0.1-3: optional Gaming catalog and Gaming Check integration.
+- ErgenCTL 1.1.0.dev-13: diagnostics, recovery and Gaming Check.
 - ErgenOS Welcome 1.0.3-1: redesigned portal and language-aware project resources.
 - Optional ErgenOS Secure Boot 0.2.0.dev-6: existing signed-boot recovery backend.
 - Optional ErgenProton-WoW 0.2.0-1: WoW-focused compatibility tool, not installed
   by default and not included in the ISO.
 
-The repository now includes ergenos-theme 1.2.0-3. The October 25 refresh
-builds ErgenCTL and ErgenPac from pinned source snapshots of their current
-GitHub revisions. ErgenPac includes the responsive navigation changes made
-after v1.0.1. See CHANGELOG.md for build and validation scope.
+The repository includes ergenos-theme 1.2.0-3. ErgenCTL and ErgenPac are built
+from pinned source revisions. See CHANGELOG.md for build and validation scope.
 
 ## Current first-party packages
 
