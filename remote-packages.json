@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "packages": [
+    {
+      "filename": "ergenproton-wow-0.2.0-1-x86_64.pkg.tar.zst",
+      "url": "https://github.com/ErgenosSW/ErgenProton-WoW/releases/download/v0.2.0/ergenproton-wow-0.2.0-1-x86_64.pkg.tar.zst",
+      "size": 503453351,
+      "sha256": "a7473d2b973c318615b23e30752c4d91bd304d0e4a79668f4938f105b22f61d8",
+      "signature": "ergenproton-wow-0.2.0-1-x86_64.pkg.tar.zst.sig",
+      "signature_url": "https://github.com/ErgenosSW/ErgenProton-WoW/releases/download/v0.2.0/ergenproton-wow-0.2.0-1-x86_64.pkg.tar.zst.sig",
+      "signature_size": 119,
+      "signature_sha256": "53df8535046ed50d576b60a8b316f05767bc5073c38a9380a67eab2afc5442f3"
+    }
+  ]
+}

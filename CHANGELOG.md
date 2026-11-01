@@ -1,3 +1,14 @@
+# Changelog
+
+## 2026-11-01 - Optional ErgenProton-WoW package
+
+- Add signed `ergenproton-wow 0.2.0-1` metadata to the Pacman repository.
+- Keep the 480 MiB package as a verified GitHub Release asset instead of storing
+  a file larger than GitHub's Git limit in this repository.
+- Fetch and verify the package and detached signature before Pages deployment.
+- The package remains optional, is not installed by ErgenPac and is not included
+  in the ErgenOS ISO.
+
 ## 2026-10-25 - Package refresh
 
 - ErgenCTL 1.1.0.dev-12, source revision 158f0058307ce813d538266af5f5958d4b567f7d.
@@ -12,7 +23,6 @@
   both repository database signatures were verified with the published key.
 - Existing package archives remain available. Welcome and Secure Boot are unchanged.
 
-# Changelog
 
 ## ErgenPac 1.0.1-1 — 2026-10-11
 

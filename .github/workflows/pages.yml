@@ -1,0 +1,62 @@
+name: Publish signed Pacman repository
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: package-repository-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  build:
+    name: Fetch and validate repository
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - name: Install validation tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libarchive-tools zstd
+      - name: Fetch large release packages
+        run: python3 tools/fetch-remote-packages.py
+      - name: Verify signatures and repository integrity
+        run: python3 tools/validate-repository.py
+      - name: Configure Pages
+        if: github.event_name != 'pull_request'
+        uses: actions/configure-pages@45bfe0192ca1faeb007ade9deae92b16b8254a0d # v6.0.0
+      - name: Prepare public repository
+        if: github.event_name != 'pull_request'
+        run: |
+          mkdir _site
+          cp -a .nojekyll README.md CHANGELOG.md keys x86_64 _site/
+          for alias in ergenos.db ergenos.db.sig ergenos.files ergenos.files.sig; do
+            rm "_site/x86_64/${alias}"
+            cp -L "x86_64/${alias}" "_site/x86_64/${alias}"
+          done
+      - name: Upload Pages artifact
+        if: github.event_name != 'pull_request'
+        uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
+        with:
+          path: _site
+
+  deploy:
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy repository
+        id: deployment
+        uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346 # v5.0.1

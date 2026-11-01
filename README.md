@@ -38,6 +38,8 @@ system.
 - ErgenCTL 1.1.0.dev-12: redesigned UI, hybrid graphics diagnostics and update verification.
 - ErgenOS Welcome 1.0.3-1: redesigned portal and language-aware project resources.
 - Optional ErgenOS Secure Boot 0.2.0.dev-6: existing signed-boot recovery backend.
+- Optional ErgenProton-WoW 0.2.0-1: WoW-focused compatibility tool, not installed
+  by default and not included in the ISO.
 
 The repository now includes ergenos-theme 1.2.0-3. The October 25 refresh
 builds ErgenCTL and ErgenPac from pinned source snapshots of their current
@@ -51,6 +53,7 @@ after v1.0.1. See CHANGELOG.md for build and validation scope.
 - ErgenOS Welcome
 - ErgenPac
 - ErgenOS keyring
+- ErgenProton-WoW
 - signed shim binaries used by ErgenOS Secure Boot
 
 Older package versions may remain in `x86_64/` for rollback or recovery. The
@@ -66,3 +69,20 @@ signed repository database determines the version offered by Pacman.
 This repository distributes both original ErgenOS software and third-party
 components. Individual packages retain their respective licenses and upstream
 attribution.
+
+## Maintainer validation
+
+Run the remote-package fetcher followed by the validator before publication:
+
+```sh
+python3 tools/fetch-remote-packages.py
+python3 tools/validate-repository.py
+```
+
+The fetcher downloads large release assets from an allowlisted GitHub release
+and checks their recorded size and SHA-256. The validator then verifies the
+expected signing key, both signed databases, indexed package SHA-256 sums,
+embedded signatures when present, all retained package signatures and Pacman
+alias files. GitHub Actions performs the same checks before assembling the Pages
+artifact, so large packages are served through the normal ErgenOS repository
+without storing them in Git. See RELEASING.md.
